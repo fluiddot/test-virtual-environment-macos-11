@@ -21,7 +21,7 @@ jobs:
             - name: Force booting Simulator app
               run: xcrun simctl boot "${{ matrix.device }}"
             
-            - name: Test: Sleep for ten seconds
+            - name: Test Sleep for ten seconds
               run: sleep 10
 
             - name: Bring Simulator to the foreground
