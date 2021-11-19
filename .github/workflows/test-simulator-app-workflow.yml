@@ -8,8 +8,8 @@ jobs:
         runs-on: macos-11
         strategy:
             matrix:
-                xcode: ['13.0']
-                device: ['iPhone 12']
+                xcode: ['13.1']
+                device: ['iPhone 13']
 
         steps:
             - name: Switch Xcode version to ${{ matrix.xcode }}
