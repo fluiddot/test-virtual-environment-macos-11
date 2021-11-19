@@ -25,4 +25,4 @@ jobs:
               run: sleep 10
 
             - name: Bring Simulator to the foreground
-              run: open /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer/Applications/Simulator.app
+              run: open -Fn /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer/Applications/Simulator.app
