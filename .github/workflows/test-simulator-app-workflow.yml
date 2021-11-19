@@ -1,0 +1,15 @@
+name: Test Simulator app
+
+on:
+    pull_request:
+
+jobs:
+    test:
+        runs-on: macos-11
+        strategy:
+            matrix:
+                xcode: ['13.0']
+
+        steps:
+            - name: Open Simulator app
+              run: open -Fn /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer/Applications/Simulator.app
