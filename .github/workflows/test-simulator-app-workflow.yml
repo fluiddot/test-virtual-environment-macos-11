@@ -15,11 +15,16 @@ jobs:
             - name: Switch Xcode version to ${{ matrix.xcode }}
               run: sudo xcode-select --switch /Applications/Xcode_${{ matrix.xcode }}.app
 
-            - name: Print simulators list
-              run: xcrun simctl list --json
+            # - name: Print simulators list
+            #   run: xcrun simctl list --json
 
-            - name: Force booting Simulator app
-              run: xcrun simctl boot "${{ matrix.device }}"
+            # - name: Force booting Simulator app
+            #   run: xcrun simctl boot "${{ matrix.device }}"
 
-            - name: Bring Simulator to the foreground
-              run: open -Fn /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer/Applications/Simulator.app
+            # - name: Bring Simulator to the foreground
+            #   run: open -Fn /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer/Applications/Simulator.app
+
+            - name: Open Simulator app
+              run: |
+                /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer/Applications/Simulator.app
+                open -Fn /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer/Applications/Simulator.app
