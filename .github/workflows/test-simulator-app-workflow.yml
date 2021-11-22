@@ -18,8 +18,8 @@ jobs:
             # - name: Print simulators list
             #   run: xcrun simctl list --json
 
-            # - name: Force booting Simulator app
-            #   run: xcrun simctl boot "${{ matrix.device }}"
+            - name: Force booting Simulator app
+              run: xcrun simctl boot "${{ matrix.device }}"
 
             # - name: Bring Simulator to the foreground
             #   run: open -Fn /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer/Applications/Simulator.app
